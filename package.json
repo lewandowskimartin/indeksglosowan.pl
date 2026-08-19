@@ -1,5 +1,5 @@
 {
-  "name": "sejm-vote-explorer",
+  "name": "indeksglosowan",
   "private": true,
   "scripts": {
     "dev": "next dev",

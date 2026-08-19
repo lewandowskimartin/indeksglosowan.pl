@@ -1,6 +1,7 @@
-# Sejm Vote Explorer
+# Indeks Głosowań
 
-Read-only, login-free search and breakdown tool over Sejm RP voting records.
+**indeksglosowan.pl** — read-only, login-free search index over Sejm RP voting records.
+
 Forked from **Nawigator Wyborczy** — same Supabase database, same stack, new front door.
 
 ## What this is (and isn't)
@@ -32,6 +33,8 @@ Vercel + Cloudflare. Identical to Nawigator — nothing new to run or pay for.
 | `/api/cron/sync-latest-sitting` | Daily Vercel cron, 02:00 UTC |
 | `/api/admin/sync`, `/api/admin/fix-druks`, `/api/admin/votings` | Maintenance |
 
+Branding lives in one file: `lib/site.ts`.
+
 ## Setup
 
 ```bash
@@ -40,7 +43,7 @@ npm install
 npm run dev
 ```
 
-Then apply the two migrations to your existing Supabase project, in order:
+Then apply the two migrations to your Supabase project, in order:
 
 ```
 supabase/migrations/0001_explorer_core.sql   # club_at_vote column, trigram indexes, public read RLS
@@ -67,7 +70,12 @@ challenges, invitations, all Supabase Auth pages and forms, alignment RPCs, user
 Klaro consent banner + GA/Clarity (no cookies are set to visitors, so no banner is required —
 re-add both together if you ever add analytics).
 
+## Roadmap
+
+Phase 2 is the public read API + MCP tool ("Kwerenda") with rate limiting — the piece that
+later earns recurring revenue and ports to other parliaments.
+
 ## Attribution
 
 Data from the official Sejm RP API (`api.sejm.gov.pl`). Verify the re-use terms before
-charging for API access.
+charging for API access. The site is not affiliated with Kancelaria Sejmu.

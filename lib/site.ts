@@ -1,15 +1,17 @@
 /**
  * Single place for brand + URL config.
- * Change SITE_NAME / SITE_DOMAIN once the domain is picked.
+ * The header renders SITE_NAME as [first word][rest], so keep it two words.
  */
-export const SITE_NAME = "Sejm Vote Explorer";
-export const SITE_SHORT = "Explorer";
+export const SITE_NAME = "Indeks Głosowań";
+export const SITE_SHORT = "Indeks";
 export const SITE_TAGLINE =
   "Sprawdź, jak naprawdę głosował Sejm — każde głosowanie, każdy klub, każdy poseł.";
 
+export const SITE_DOMAIN = "indeksglosowan.pl";
+
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : `https://${SITE_DOMAIN}`);
 
 /** Official Sejm source links — every data point must be traceable. */
 export const sejmDrukUrl = (druk: number) =>
