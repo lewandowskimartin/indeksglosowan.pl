@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/sync-latest-sitting",
+      "schedule": "0 2 * * *"
+    }
+  ]
+}
